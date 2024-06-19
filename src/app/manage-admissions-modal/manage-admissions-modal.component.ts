@@ -48,7 +48,7 @@ export class ManageAdmissionsModalComponent implements OnInit   {
     })
   }
 
-  filterAdmissions(event: any) {
+  filterDepartments(event: any) {
     const searchTerm = event.target.value.toLowerCase();
     this.filteredDepartments = this.departments.filter(admission =>
       admission.name.toLowerCase().includes(searchTerm)

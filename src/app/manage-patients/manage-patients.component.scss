@@ -1,0 +1,68 @@
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #3880ff;
+  } 
+
+  :host {
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  
+    .custom-searchbar {
+      --height: 30px; 
+      --margin-right: 10px;
+      --padding-start: 10px;
+      --padding-end: 10px;
+      --border-radius: 10px;
+      font-size: 14px;
+      flex: 1; 
+    }
+  
+    .create-button {
+      height: 30px;
+      line-height: 30px; 
+      --padding-start: 15px;
+      --padding-end: 15px;
+      font-size: 14px;
+    }
+  }
+
+  .patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    
+    thead {
+      background-color: #3880ff;
+      color: white;
+      
+      th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    
+    tbody {
+      tr {
+        border-bottom: 1px solid #ddd;
+        
+        &:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .button-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+  }

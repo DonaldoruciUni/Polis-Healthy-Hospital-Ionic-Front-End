@@ -22,7 +22,7 @@ export class Patient {
       name: this.name,
       lastName: this.lastName,
       department: this.department,
-      birthDate: this.birthDate.toISOString()
+      birthDate: new Date(this.birthDate.toString()).toISOString()
     }
   }
 }

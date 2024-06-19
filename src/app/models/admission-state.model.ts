@@ -25,8 +25,8 @@ export class AdmissionState {
       discharge: this.discharge,
       reason: this.reason,
       cause: this.cause,
-      enteringDate: this.enteringDate.toISOString(),
-      exitingDate: this.exitingDate ? this.exitingDate.toISOString(): null,
+      enteringDate: new Date (this.enteringDate.toString()).toISOString(),
+      exitingDate: this.exitingDate ? new Date (this.exitingDate.toString()).toISOString(): null,
       patient: this.patient.toApi(),
     }
   }

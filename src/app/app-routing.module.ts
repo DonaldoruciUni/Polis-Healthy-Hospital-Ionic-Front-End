@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { ManageDepartmentsComponent } from './manage-departments/manage-departments.component';
 import { ManagePatientsComponent } from './manage-patients/manage-patients.component';
 import {ManageAdmissionsModalComponent } from './manage-admissions-modal/manage-admissions-modal.component';
@@ -7,6 +8,9 @@ import { ManageClinicalDataComponent } from './manage-clinical-data/manage-clini
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Set default route to home
+  { path: 'home', component: HomeComponent },
+
   {
     path: '',
     redirectTo: 'folder/departments',

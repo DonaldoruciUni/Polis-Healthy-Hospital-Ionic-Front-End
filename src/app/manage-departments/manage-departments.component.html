@@ -19,7 +19,7 @@
             [(ngModel)]="searchTerm"
             (ionInput)="filterDepartments($event)"
           ></ion-searchbar>
-          <ion-button (click)="createDepartment()" class="create-button">Add new Department</ion-button>
+          <ion-button (click)="createDepartment()" class="create-button" >Add new Department</ion-button>
         </div>
 
         <table class="department-table">
@@ -36,7 +36,7 @@
               <td>{{ department.code }}</td>
               <td>{{ department.name }}</td>
               <td>
-                <ion-button (click)="editDepartment(department)" color="primary">Edit</ion-button>
+                <ion-button (click)="editDepartment(department)" color="light">Edit</ion-button>
               </td>
               <td>
                 <ion-button (click)="confirmDelete(department.id)" color="danger">Delete</ion-button>

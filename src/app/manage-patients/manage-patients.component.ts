@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { AddPatientModalComponent } from '../add-patient-modal/add-patient-modal.component';
 import { Router } from '@angular/router';
-import {PatientService} from "../services/patient.services";
-import {Patient} from "../models/patient.model";
-import {AdmissionStateService} from "../services/admission-state.services";
-import {AdmissionState} from "../models/admission-state.model";
+import { PatientService } from '../services/patient.services';
+import { Patient } from '../models/patient.model';
+import { AdmissionStateService } from '../services/admission-state.services';
+import { AdmissionState } from '../models/admission-state.model';
 
 @Component({
   selector: 'app-manage-patients',
@@ -23,7 +23,7 @@ export class ManagePatientsComponent implements OnInit {
     private modalController: ModalController,
     private alertController: AlertController,
     private router: Router
-    ) {}
+  ) {}
 
   ngOnInit() {
     this.patientService.getPatients().subscribe(patients => {
@@ -145,6 +145,15 @@ export class ManagePatientsComponent implements OnInit {
         {
           text: 'Confirm',
           handler: async (data) => {
+            if (!data) {
+              const alert = await this.alertController.create({
+                header: 'Error',
+                message: 'Please choose a reason for discharge.',
+                buttons: ['OK']
+              });
+              await alert.present();
+              return;
+            }
 
             console.log('Patient discharged with reason:', data);
             const admission = new AdmissionState({
@@ -179,7 +188,6 @@ export class ManagePatientsComponent implements OnInit {
 
     await alert.present();
   }
-
 
   async manageAdmissions(patientId: number) {
     this.router.navigate(['/folder/manage-admissions', patientId] );

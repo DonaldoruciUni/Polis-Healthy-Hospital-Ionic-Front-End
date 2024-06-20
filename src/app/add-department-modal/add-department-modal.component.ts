@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { Department } from '../models/department.model';
 
 @Component({
@@ -10,13 +10,26 @@ import { Department } from '../models/department.model';
 export class AddDepartmentModalComponent {
   @Input() department: Department = { name: '', code: '' };
 
-  constructor(private modalController: ModalController) {}
+  constructor(
+    private modalController: ModalController,
+    private alertController: AlertController // Import AlertController
+  ) {}
 
   dismiss() {
     this.modalController.dismiss();
   }
 
-  confirm() {
-    this.modalController.dismiss(this.department);
+  async confirm() {
+    if (!this.department.name || !this.department.code) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'All fields must be filled out.',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+    } else {
+      this.modalController.dismiss(this.department);
+    }
   }
 }

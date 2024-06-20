@@ -5,6 +5,7 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -21,7 +22,7 @@ import {PatientService} from "./services/patient.services";
 import {ClinicalDataService} from "./services/clinical-data.service";
 
 @NgModule({
-  declarations: [AppComponent, ManageDepartmentsComponent, AddDepartmentModalComponent, ManagePatientsComponent, AddPatientModalComponent, ManageAdmissionsModalComponent, ManageClinicalDataComponent,
+  declarations: [AppComponent, HomeComponent, ManageDepartmentsComponent, AddDepartmentModalComponent, ManagePatientsComponent, AddPatientModalComponent, ManageAdmissionsModalComponent, ManageClinicalDataComponent, 
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
     HttpClientModule],

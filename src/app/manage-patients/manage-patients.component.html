@@ -40,15 +40,15 @@
               <td>{{ patient.department.name }}</td>
               <td>
                 <div class="button-row">
-                  <ion-button (click)="editPatient(patient)" color="primary">Edit</ion-button>
-                  <ion-button (click)="confirmDelete(patient.id)" color="danger">Delete</ion-button>
+                  <ion-button (click)="editPatient(patient)" color="primary" size="small">Edit</ion-button>
+                  <ion-button (click)="confirmDelete(patient.id)" color="danger" size="small">Delete</ion-button>
                 </div>
                 <div class="button-row">
-                  <ion-button (click)="dischargePatient(patient.id)" color="medium">Discharge</ion-button>
-                  <ion-button (click)="manageAdmissions(patient.id)" color="primary">Manage Admissions</ion-button>
+                  <ion-button (click)="dischargePatient(patient.id)" color="medium" size="small">Discharge</ion-button>
+                  <ion-button (click)="manageAdmissions(patient.id)" color="primary" size="small">Manage Admissions</ion-button>
                 </div>
                 <div class="button-row">
-                  <ion-button (click)="manageClinicalData(patient)" color="primary">Manage Clinical Data</ion-button>
+                  <ion-button (click)="manageClinicalData(patient)" color="primary" size="small">Manage Clinical Data</ion-button>
                 </div>
               </td>
             </tr>
